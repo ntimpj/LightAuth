@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "1a5e56d4-6f68-45a6-b98d-290e4fc4111d",
+		"name": "Test Autentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verify Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.authenticate.com/verifyemail.php?hash=7CC4BFE3-7C48-B0B3-55D3-9C9CBCDC59B2&email=mads.peter.jensen@get2net.dk",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"verifyemail.php"
+					],
+					"query": [
+						{
+							"key": "hash",
+							"value": "7CC4BFE3-7C48-B0B3-55D3-9C9CBCDC59B2"
+						},
+						{
+							"key": "email",
+							"value": "mads.peter.jensen@get2net.dk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"mads.peter.jensen@get2net.dk\",\n    \"password\":\"Test1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.authenticate.com/authenticate.php",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"authenticate.php"
+					]
+				},
+				"description": "Login into autentication"
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"mads.peter.jensen@get2net.dk\",\n    \"id\":\"56\",\n    \"token\":\"067926BA-2A22-68CF-202F-EAC1386012E4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.authenticate.com/validatelogin.php",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"validatelogin.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renew Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"renewtoken\": \"835D6562-6DD0-78E4-3D3B-981FBC787A06\",\n    \"id\":\"56\",\n    \"email\":\"mads.peter.jensen@get2net.dk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.authenticate.com/renewtoken.php",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"renewtoken.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"mads.peter.jensen@get2net.dk\",\n    \"phone\":\"40862933\",\n    \"password\":\"Test1234\",\n    \"firstname\":\"Mads Peter\",\n    \"lastname\":\"Jensen\",\n    \"birthdate\":\"1964-01-31\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.authenticate.com/createuser.php",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"createuser.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Exist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"mads.peter.jensen@get2net.dk\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://www.authenticate.com/userexist.php",
+					"protocol": "http",
+					"host": [
+						"www",
+						"authenticate",
+						"com"
+					],
+					"path": [
+						"userexist.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
